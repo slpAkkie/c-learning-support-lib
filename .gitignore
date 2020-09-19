@@ -57,6 +57,7 @@ $RECYCLE.BIN
 
 
 ### Current project ###
+demo/*
 demo/Debug/*
 *.sln
 *.vcxproj
