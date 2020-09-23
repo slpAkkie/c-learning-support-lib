@@ -60,3 +60,4 @@ $RECYCLE.BIN
 demo/*.*
 demo/Debug/*.*
 !demo/Debug/slpSample.exe
+!demo/main.c
