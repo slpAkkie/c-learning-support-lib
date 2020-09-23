@@ -36,15 +36,15 @@ void main( void ) {
         bluePrint( "Теперь покажу вам базовую работу с массивами\n\n" );
         char arrAlias = 'X';
         vsize arrLen = getArrLen( arrAlias, false );
-        iarr arrX;
-        setArrLenght( arrX, iarr, arrLen );
+        farr arrX;
+        setArrLenght( arrX, farr, arrLen );
         cls;
 
         bluePrint( "Теперь давайте введем сам массив:\n" );
-        fillIntArray( arrX, arrAlias, arrLen );
+        fillFloatArray( arrX, arrAlias, arrLen );
         cls;
 
-        printIntArray( arrX, arrAlias, arrLen, "Ваш введенный" );
+        printFloatArray( arrX, arrAlias, arrLen, "Ваш введенный" );
 
         pause;
         cls;
