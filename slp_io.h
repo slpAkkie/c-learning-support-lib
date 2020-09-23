@@ -4,11 +4,23 @@
 #include <stdbool.h>
 #include <stdarg.h>
 
+#define _SLP_IO
+
+// Тип "Строка" для удобства - по сути массив символов
 typedef char* string;
 
+/*
+* Макросы для управления цветом отображения текста в консоли
+* Используйте только если использовали функцию init. В стандартных цветах консоли эти макросы будут вести себя некорректно
+*/
+
+// Писать дальше красным цветом (Только с использованным init())
 #define startRedColor printf("\033[31m")
+// Писать дальше синим цветом (Только с использованным init())
 #define startBlueColor printf("\033[34m")
+// Писать дальше зеленым цветом (Только с использованным init())
 #define startGreenColor printf("\033[32m")
+// Писать цветом по умолчанию (Только с использованным init())
 #define endColor printf("\033[30m")
 
 #ifdef __SLP_DEV_MODE__
@@ -29,15 +41,24 @@ typedef char* string;
     endColor
 #endif // !SLP_FULL_MODE
 
+// Поставить перенос на новую строку
 #define nl printf("\n")
+// Очистить экран
 #define cls system("cls")
+// Поставить исполнение программы на паузу
 #define pause system("pause")
-#define pause_u system("pause > nul")
+// Поставить исполнение программы на паузу без сообщения
+#define pause_s system("pause > nul")
 #define _STD_READ_BUFFER 255
 
+// Как printf только красным цветом (Только с использованным init())
 void redPrint( const string format, ... );
+// Как printf только синим цветом (Только с использованным init())
 void bluePrint( const string format, ... );
+// Как printf только зеленым цветом (Только с использованным init())
 void greenPrint( const string format, ... );
 
+// Безопасный ввод целого числа
 bool getCorrectInt( int* dist );
+// Безопасный ввод вещественного числа
 bool getCorrectFloat( float* dist );
