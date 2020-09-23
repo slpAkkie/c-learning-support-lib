@@ -28,18 +28,21 @@ typedef struct matr_size {
     vsize rows, cols;
 } msize;
 
-// Установить размер матрицы
+// Устанавливает размер матрицы
 #define setMatrLenght(matr, mType, eType, size) \
     matr = ( mType )malloc( size.rows * sizeof( eType ) ); \
     for (int i = 0; i < size.rows; i++) matr[i] = (eType*)malloc( size.cols * sizeof( eType ) )
 
-// Получает от пользователя размер матрицы
+/*
+    Получает от пользователя размер матрицы
+    Возвращает размер матрицы структурой msize
+*/
 msize getMatrSize( const char symbol, bool clsMode );
-// Заполнить целочисленную матрицу
+// Заполняет целочисленную матрицу
 void fillIntMatr( msize size, imatr matr, char symbol );
-// Вывести целочисленную матрицу
+// Выводит целочисленную матрицу
 void printIntMatr( msize size, imatr matr, char symbol, string status );
-// Заполнить вещественную матрицу
+// Заполняет вещественную матрицу
 void fillFloatMatr( msize size, fmatr matr, char symbol );
-// Вывести вещественную матрицу
+// Выводит вещественную матрицу
 void printFloatMatr( msize size, fmatr matr, char symbol, string status );

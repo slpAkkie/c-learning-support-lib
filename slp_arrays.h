@@ -19,16 +19,19 @@ typedef float* farr;
     typedef unsigned int vsize;
 #endif // !_VSIZE_T
 
-// Установить размер массива
+// Устанавливает размер массива
 #define setArrLenght(arr, type, lenght) arr = ( type )malloc( lenght * sizeof( type ) )
 
-// Получает от пользователя размер массива
+/*
+    Получает от пользователя размер массива
+    Возвращает размер массива типа vsize (Фактический тип: int)
+*/
 vsize getArrLen( const char symbol, bool clsMode );
-// Заполнить целочисленный массив
+// Заполняет целочисленный массив
 void fillIntArray( iarr arr, const char symbol, vsize len );
-// Вывести целочисленный массив
+// Выводит целочисленный массив
 void printIntArray( iarr arr, const char symbol, vsize len, string status );
-// Заполнить вещественный массив
+// Заполняет вещественный массив
 void fillFloatArray( farr arr, const char symbol, vsize len );
-// Вывести вещественный массив
+// Выводит вещественный массив
 void printFloatArray( farr arr, const char symbol, vsize len, string status );
