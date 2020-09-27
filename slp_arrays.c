@@ -1,22 +1,22 @@
 /*
-    РђРІС‚РѕСЂ Р±РёР±Р»РёРѕС‚РµРєРё slpAkkie (GitHub Alexandr Shamanin)
+    Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
 
-    РЎРјРѕС‚СЂРёС‚Рµ РїРѕСЃР»РµРґРЅСЋСЋ РІРµСЂСЃРёСЋ РЅР° GitHub - https://github.com/slpAkkie/slpCLib
+    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
 */
 
 #include "slp_arrays.h"
 
 vsize getArrLen( const string symbol, bool clsMode ) {
     vsize arr_lenght;
-    printf( "Р’РІРµРґРёС‚Рµ СЂР°Р·РјРµСЂРЅРѕСЃС‚СЊ РјР°СЃСЃРёРІР° %s (%d-%d)\n>> ", symbol, _MIN_ARR_LEN, _MAX_ARR_LEN );
+    printf( "Введите размерность массива %s (%d-%d)\n>> ", symbol, _MIN_ARR_LEN, _MAX_ARR_LEN );
 
     while ( !getCorrectInt( &arr_lenght ) || arr_lenght > _MAX_ARR_LEN || arr_lenght < _MIN_ARR_LEN ) {
         clsMode&& cls;
 
         #ifdef _SLP_IO
-        redPrint( "Р Р°Р·РјРµСЂРЅРѕСЃС‚СЊ РЅРµ РєРѕСЂСЂРµРєС‚РЅР° (2-50)\nРџРѕР¶Р°Р»СѓР№СЃС‚Р° РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ\n" );
+        redPrint( "Размерность не корректна (2-50)\nПожалуйста повторите ввод\n" );
         #else
-        printf( "Р Р°Р·РјРµСЂРЅРѕСЃС‚СЊ РЅРµ РєРѕСЂСЂРµРєС‚РЅР° (2-50)\nРџРѕР¶Р°Р»СѓР№СЃС‚Р° РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ\n" );
+        printf( "Размерность не корректна (2-50)\nПожалуйста повторите ввод\n" );
         #endif // _SLP_IO
 
         printf( ">> " );
@@ -32,12 +32,12 @@ void fillIntArray( iarr arr, const string symbol, vsize len ) {
         if ( !getCorrectInt( &arr[i] ) ) {
 
             #ifdef _SLP_IO
-            redPrint( "Р’С‹ РІРІРµР»Рё РЅРµ С†РµР»РѕРµ С‡РёСЃР»Рѕ\n" );
+            redPrint( "Вы ввели не целое число\n" );
             #else
-            printf( "Р’С‹ РІРІРµР»Рё РЅРµ С†РµР»РѕРµ С‡РёСЃР»Рѕ\n" );
+            printf( "Вы ввели не целое число\n" );
             #endif // _SLP_IO
 
-            printf( "РџРѕР¶Р°Р»СѓР№СЃС‚Р° РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ\n" );
+            printf( "Пожалуйста повторите ввод\n" );
             i--;
             continue;
         }
@@ -45,7 +45,7 @@ void fillIntArray( iarr arr, const string symbol, vsize len ) {
 }
 
 void printIntArray( iarr arr, const string symbol, vsize len, const string status ) {
-    greenPrint( "%s РјР°СЃСЃРёРІ %s\n", status, symbol );
+    greenPrint( "%s массив %s\n", status, symbol );
     for ( vsize i = 0; i < len; i++ ) printf( "%4d  ", arr[i] );
     nl;
 }
@@ -56,12 +56,12 @@ void fillFloatArray( farr arr, const string symbol, vsize len ) {
         if ( !getCorrectFloat( &arr[i] ) ) {
 
             #ifdef _SLP_IO
-            redPrint( "Р’С‹ РІРІРµР»Рё РЅРµ С‡РёСЃР»Рѕ\nРџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ\n" );
+            redPrint( "Вы ввели не число\nПовторите ввод\n" );
             #else
-            printf( "Р’С‹ РІРІРµР»Рё РЅРµ С‡РёСЃР»Рѕ\nРџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ\n" );
+            printf( "Вы ввели не число\nПовторите ввод\n" );
             #endif // _SLP_IO
 
-            printf( "РџРѕР¶Р°Р»СѓР№СЃС‚Р° РїРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ\n" );
+            printf( "Пожалуйста повторите ввод\n" );
             i--;
             continue;
         }
@@ -69,7 +69,7 @@ void fillFloatArray( farr arr, const string symbol, vsize len ) {
 }
 
 void printFloatArray( farr arr, const string symbol, vsize len, const string status ) {
-    greenPrint( "%s РјР°СЃСЃРёРІ %s\n", status, symbol );
+    greenPrint( "%s массив %s\n", status, symbol );
     for ( vsize i = 0; i < len; i++ ) printf( "%7.2f  ", arr[i] );
     nl;
 }

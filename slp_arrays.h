@@ -1,43 +1,43 @@
 /*
-    РђРІС‚РѕСЂ Р±РёР±Р»РёРѕС‚РµРєРё slpAkkie (GitHub Alexandr Shamanin)
+    Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
 
-    РЎРјРѕС‚СЂРёС‚Рµ РїРѕСЃР»РµРґРЅСЋСЋ РІРµСЂСЃРёСЋ РЅР° GitHub - https://github.com/slpAkkie/slpCLib
+    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
 */
 
 #pragma once
 #include "slp_io.h"
 #include <stdio.h>
 
-// РњРёРЅРёРјР°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°
+// Минимальный размер массива
 #define _MIN_ARR_LEN 2
-// РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°
+// Максимальный размер массива
 #define _MAX_ARR_LEN 50
 
-// Р¦РµР»РѕС‡РёСЃР»РµРЅРЅС‹Р№ РјР°СЃСЃРёРІ
+// Целочисленный массив
 typedef int* iarr;
 
-// Р’РµС‰РµСЃС‚РІРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ
+// Вещественный массив
 typedef float* farr;
 
 #ifndef _VSIZE_T
 #define _VSIZE_T
-// Р Р°Р·РјРµСЂ РјР°СЃСЃРёРІР°
+// Размер массива
 typedef unsigned int vsize;
 #endif // !_VSIZE_T
 
-// РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°
+// Устанавливает размер массива
 #define setArrLenght(arr, type, lenght) arr = ( type )malloc( lenght * sizeof( type ) )
 
 /*
-    РџРѕР»СѓС‡Р°РµС‚ РѕС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР°
-    Р’РѕР·РІСЂР°С‰Р°РµС‚ СЂР°Р·РјРµСЂ РјР°СЃСЃРёРІР° С‚РёРїР° vsize (Р¤Р°РєС‚РёС‡РµСЃРєРёР№ С‚РёРї: int)
+    Получает от пользователя размер массива
+    Возвращает размер массива типа vsize (Фактический тип: int)
 */
 vsize getArrLen( const string symbol, bool clsMode );
-// Р—Р°РїРѕР»РЅСЏРµС‚ С†РµР»РѕС‡РёСЃР»РµРЅРЅС‹Р№ РјР°СЃСЃРёРІ
+// Заполняет целочисленный массив
 void fillIntArray( iarr arr, const string symbol, vsize len );
-// Р’С‹РІРѕРґРёС‚ С†РµР»РѕС‡РёСЃР»РµРЅРЅС‹Р№ РјР°СЃСЃРёРІ
+// Выводит целочисленный массив
 void printIntArray( iarr arr, const string symbol, vsize len, string status );
-// Р—Р°РїРѕР»РЅСЏРµС‚ РІРµС‰РµСЃС‚РІРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ
+// Заполняет вещественный массив
 void fillFloatArray( farr arr, const string symbol, vsize len );
-// Р’С‹РІРѕРґРёС‚ РІРµС‰РµСЃС‚РІРµРЅРЅС‹Р№ РјР°СЃСЃРёРІ
+// Выводит вещественный массив
 void printFloatArray( farr arr, const string symbol, vsize len, string status );

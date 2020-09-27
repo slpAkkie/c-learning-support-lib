@@ -1,7 +1,7 @@
 /*
-    РђРІС‚РѕСЂ Р±РёР±Р»РёРѕС‚РµРєРё slpAkkie (GitHub Alexandr Shamanin)
+    Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
 
-    РЎРјРѕС‚СЂРёС‚Рµ РїРѕСЃР»РµРґРЅСЋСЋ РІРµСЂСЃРёСЋ РЅР° GitHub - https://github.com/slpAkkie/slpCLib
+    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
 */
 
 #include "slp_io.h"
