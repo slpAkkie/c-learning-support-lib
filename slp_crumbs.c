@@ -1,3 +1,9 @@
+/*
+    Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
+
+    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
+*/
+
 #include "slp_crumbs.h"
 
 void init( const string title ) {

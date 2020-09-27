@@ -1,3 +1,9 @@
+/*
+    Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
+
+    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
+*/
+
 #include "slp_matr.h"
 
 msize getMatrSize( const char symbol, bool clsMode ) {
