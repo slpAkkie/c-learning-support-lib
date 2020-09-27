@@ -44,7 +44,7 @@ void main( void ) {
         cls;
 
         bluePrint( "“еперь покажу вам базовую работу с массивами\n\n" );
-        char arrAlias = 'X';
+        char arrAlias = "X";
         // ѕолучаем размер массива в переменную типа vsize
         vsize arrLen = getArrLen( arrAlias, false );
         // ћассив создаетс€ как обычна€ переменна€ типа farr (≈сли вещественный и iarr если целочисленный)
@@ -62,7 +62,7 @@ void main( void ) {
         pause;
         cls;
         bluePrint( " ак на счет взгл€нуть на работу с матрицами?\n" );
-        char matrAlias = 'M';
+        char matrAlias = "M";
         // ѕолучаем размер матрицы в переменную типа msize
         msize matr_size = getMatrSize( matrAlias, false );
         // — матрицей так же, описываетс€ как переменна€ с указанием типа imatr (≈сли вещественна€ и imatr если целочисленна€)

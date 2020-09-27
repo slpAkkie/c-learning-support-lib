@@ -6,14 +6,14 @@
 
 #include "slp_matr.h"
 
-msize getMatrSize( const char symbol, bool clsMode ) {
+msize getMatrSize( const string symbol, bool clsMode ) {
     msize size;
     size.rows = size.cols = -1;
 
     bool isCorrectInput;
 
     while ( true ) {
-        printf( "¬ведите количество строк матрицы %c (%d - %d)\n>> ", symbol, MIN_MATR_SIZE, MAX_MATR_SIZE );
+        printf( "¬ведите количество строк матрицы %s (%d - %d)\n>> ", symbol, MIN_MATR_SIZE, MAX_MATR_SIZE );
         isCorrectInput = getCorrectInt( &size.rows );
 
         if ( clsMode ) cls;

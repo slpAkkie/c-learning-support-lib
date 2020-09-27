@@ -6,9 +6,9 @@
 
 #include "slp_arrays.h"
 
-vsize getArrLen( const char symbol, bool clsMode ) {
+vsize getArrLen( const string symbol, bool clsMode ) {
     vsize arr_lenght;
-    printf( "¬ведите размерность массива %c (%d-%d)\n>> ", symbol, _MIN_ARR_LEN, _MAX_ARR_LEN );
+    printf( "¬ведите размерность массива %s (%d-%d)\n>> ", symbol, _MIN_ARR_LEN, _MAX_ARR_LEN );
 
     while ( !getCorrectInt( &arr_lenght ) || arr_lenght > _MAX_ARR_LEN || arr_lenght < _MIN_ARR_LEN ) {
         if (clsMode) cls;
