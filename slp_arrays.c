@@ -11,7 +11,7 @@ vsize getArrLen( const string symbol, bool clsMode ) {
     printf( "Введите размерность массива %s (%d-%d)\n>> ", symbol, _MIN_ARR_LEN, _MAX_ARR_LEN );
 
     while ( !getCorrectInt( &arr_lenght ) || arr_lenght > _MAX_ARR_LEN || arr_lenght < _MIN_ARR_LEN ) {
-        if (clsMode) cls;
+        clsMode&& cls;
 
         #ifdef _SLP_IO
         redPrint( "Размерность не корректна (2-50)\nПожалуйста повторите ввод\n" );
@@ -21,6 +21,7 @@ vsize getArrLen( const string symbol, bool clsMode ) {
 
         printf( ">> " );
     }
+    clsMode&& cls;
 
     return arr_lenght;
 }
