@@ -1,4 +1,4 @@
-﻿/*
+/*
     Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
 
     Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
@@ -26,9 +26,9 @@ vsize getArrLen( const string symbol, bool clsMode ) {
     return arr_lenght;
 }
 
-void fillIntArray( iarr arr, const char symbol, vsize len ) {
+void fillIntArray( iarr arr, const string symbol, vsize len ) {
     for ( vsize i = 0; i < len; i++ ) {
-        printf( "%c[%d] >> ", symbol, i + 1 );
+        printf( "%s[%d] >> ", symbol, i + 1 );
         if ( !getCorrectInt( &arr[i] ) ) {
 
             #ifdef _SLP_IO
@@ -44,15 +44,15 @@ void fillIntArray( iarr arr, const char symbol, vsize len ) {
     }
 }
 
-void printIntArray( iarr arr, const char symbol, vsize len, const string status ) {
-    greenPrint( "%s массив %c\n", status, symbol );
+void printIntArray( iarr arr, const string symbol, vsize len, const string status ) {
+    greenPrint( "%s массив %s\n", status, symbol );
     for ( vsize i = 0; i < len; i++ ) printf( "%4d  ", arr[i] );
     nl;
 }
 
-void fillFloatArray( farr arr, const char symbol, vsize len ) {
+void fillFloatArray( farr arr, const string symbol, vsize len ) {
     for ( vsize i = 0; i < len; i++ ) {
-        printf( "%c[%d] >> ", symbol, i + 1 );
+        printf( "%s[%d] >> ", symbol, i + 1 );
         if ( !getCorrectFloat( &arr[i] ) ) {
 
             #ifdef _SLP_IO
@@ -68,8 +68,8 @@ void fillFloatArray( farr arr, const char symbol, vsize len ) {
     }
 }
 
-void printFloatArray( farr arr, const char symbol, vsize len, const string status ) {
-    greenPrint( "%s массив %c\n", status, symbol );
+void printFloatArray( farr arr, const string symbol, vsize len, const string status ) {
+    greenPrint( "%s массив %s\n", status, symbol );
     for ( vsize i = 0; i < len; i++ ) printf( "%7.2f  ", arr[i] );
     nl;
 }

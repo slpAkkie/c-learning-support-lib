@@ -1,4 +1,4 @@
-﻿/*
+/*
     Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
 
     Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
@@ -20,9 +20,9 @@ typedef int* iarr;
 typedef float* farr;
 
 #ifndef _VSIZE_T
-    #define _VSIZE_T
-    // Размер массива
-    typedef unsigned int vsize;
+#define _VSIZE_T
+// Размер массива
+typedef unsigned int vsize;
 #endif // !_VSIZE_T
 
 // Устанавливает размер массива
@@ -32,12 +32,12 @@ typedef float* farr;
     Получает от пользователя размер массива
     Возвращает размер массива типа vsize (Фактический тип: int)
 */
-vsize getArrLen( const char symbol, bool clsMode );
+vsize getArrLen( const string symbol, bool clsMode );
 // Заполняет целочисленный массив
-void fillIntArray( iarr arr, const char symbol, vsize len );
+void fillIntArray( iarr arr, const string symbol, vsize len );
 // Выводит целочисленный массив
-void printIntArray( iarr arr, const char symbol, vsize len, string status );
+void printIntArray( iarr arr, const string symbol, vsize len, string status );
 // Заполняет вещественный массив
-void fillFloatArray( farr arr, const char symbol, vsize len );
+void fillFloatArray( farr arr, const string symbol, vsize len );
 // Выводит вещественный массив
-void printFloatArray( farr arr, const char symbol, vsize len, string status );
+void printFloatArray( farr arr, const string symbol, vsize len, string status );

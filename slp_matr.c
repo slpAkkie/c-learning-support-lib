@@ -1,4 +1,4 @@
-﻿/*
+/*
     Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
 
     Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
@@ -29,12 +29,12 @@ msize getMatrSize( const string symbol, bool clsMode ) {
     }
 
     while ( true ) {
-        printf( "Введите количество столбцов матрицы %c (%d - %d)\n>> ", symbol, MIN_MATR_SIZE, MAX_MATR_SIZE );
+        printf( "Введите количество столбцов матрицы %s (%d - %d)\n>> ", symbol, MIN_MATR_SIZE, MAX_MATR_SIZE );
         isCorrectInput = getCorrectInt( &size.cols );
 
         clsMode&& cls;
         if ( size.cols >= MIN_MATR_SIZE && size.cols <= MAX_MATR_SIZE && isCorrectInput ) break;
-        
+
         #ifdef _SLP_IO
         redPrint( "Вы ввели недопусимое количество столбцов\nДиапазон от %d до %d\nПовторите ввод\n", MIN_MATR_SIZE, MAX_MATR_SIZE );
         #else
@@ -47,12 +47,12 @@ msize getMatrSize( const string symbol, bool clsMode ) {
     return size;
 }
 
-void fillIntMatr( msize size, imatr matr, char symbol ) {
+void fillIntMatr( msize size, imatr matr, string symbol ) {
     for ( vsize i = 0; i < size.rows; i++ )
         for ( vsize j = 0; j < size.cols; j++ ) {
-            printf( "%c[%d][%d] >> ", symbol, i + 1, j + 1 );
+            printf( "%s[%d][%d] >> ", symbol, i + 1, j + 1 );
             if ( !getCorrectInt( &matr[i][j] ) ) {
-                
+
                 #ifdef _SLP_IO
                 redPrint( "\nВы ввели не целое число\nПовторите ввод\n" );
                 #else
@@ -66,8 +66,8 @@ void fillIntMatr( msize size, imatr matr, char symbol ) {
         }
 }
 
-void printIntMatr( msize size, imatr matr, char symbol, string status ) {
-    greenPrint( "%s матрица %c:\n", status, symbol );
+void printIntMatr( msize size, imatr matr, string symbol, string status ) {
+    greenPrint( "%s матрица %s:\n", status, symbol );
 
     for ( vsize i = 0; i < size.rows; i++ ) {
         for ( vsize j = 0; j < size.cols; j++ )
@@ -77,10 +77,10 @@ void printIntMatr( msize size, imatr matr, char symbol, string status ) {
     nl;
 }
 
-void fillFloatMatr( msize size, fmatr matr, char symbol ) {
+void fillFloatMatr( msize size, fmatr matr, string symbol ) {
     for ( vsize i = 0; i < size.rows; i++ )
         for ( vsize j = 0; j < size.cols; j++ ) {
-            printf( "%c[%d][%d] >> ", symbol, i + 1, j + 1 );
+            printf( "%s[%d][%d] >> ", symbol, i + 1, j + 1 );
             if ( !getCorrectFloat( &matr[i][j] ) ) {
 
                 #ifdef _SLP_IO
@@ -96,8 +96,8 @@ void fillFloatMatr( msize size, fmatr matr, char symbol ) {
         }
 }
 
-void printFloatMatr( msize size, fmatr matr, char symbol, string status ) {
-    greenPrint( "%s матрица %c:\n", status, symbol );
+void printFloatMatr( msize size, fmatr matr, string symbol, string status ) {
+    greenPrint( "%s матрица %s:\n", status, symbol );
 
     for ( vsize i = 0; i < size.rows; i++ ) {
         for ( vsize j = 0; j < size.cols; j++ )

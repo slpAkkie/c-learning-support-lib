@@ -1,4 +1,4 @@
-﻿/*
+/*
     Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
 
     Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
@@ -24,9 +24,9 @@ typedef float** fmatr;
 typedef float fmatr_el;
 
 #ifndef _VSIZE_T
-    #define _VSIZE_T
-    // Размер массива
-    typedef unsigned int vsize;
+#define _VSIZE_T
+// Размер массива
+typedef unsigned int vsize;
 #endif // !_VSIZE_T
 
 // Размер матрицы
@@ -43,12 +43,12 @@ typedef struct matr_size {
     Получает от пользователя размер матрицы
     Возвращает размер матрицы структурой msize
 */
-msize getMatrSize( const char symbol, bool clsMode );
+msize getMatrSize( const string symbol, bool clsMode );
 // Заполняет целочисленную матрицу
-void fillIntMatr( msize size, imatr matr, char symbol );
+void fillIntMatr( msize size, imatr matr, string symbol );
 // Выводит целочисленную матрицу
-void printIntMatr( msize size, imatr matr, char symbol, string status );
+void printIntMatr( msize size, imatr matr, string symbol, string status );
 // Заполняет вещественную матрицу
-void fillFloatMatr( msize size, fmatr matr, char symbol );
+void fillFloatMatr( msize size, fmatr matr, string symbol );
 // Выводит вещественную матрицу
-void printFloatMatr( msize size, fmatr matr, char symbol, string status );
+void printFloatMatr( msize size, fmatr matr, string symbol, string status );
