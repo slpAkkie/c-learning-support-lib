@@ -1,4 +1,4 @@
-﻿/*
+/*
     Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
 
     Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
@@ -44,7 +44,7 @@ void main( void ) {
         cls;
 
         bluePrint( "Теперь покажу вам базовую работу с массивами\n\n" );
-        char arrAlias = "X";
+        string arrAlias = "X";
         // Получаем размер массива в переменную типа vsize
         vsize arrLen = getArrLen( arrAlias, false );
         // Массив создается как обычная переменная типа farr (Если вещественный и iarr если целочисленный)
@@ -62,7 +62,7 @@ void main( void ) {
         pause;
         cls;
         bluePrint( "Как на счет взглянуть на работу с матрицами?\n" );
-        char matrAlias = "M";
+        string matrAlias = "M";
         // Получаем размер матрицы в переменную типа msize
         msize matr_size = getMatrSize( matrAlias, false );
         // С матрицей так же, описывается как переменная с указанием типа imatr (Если вещественная и imatr если целочисленная)

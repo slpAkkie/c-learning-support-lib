@@ -1,4 +1,4 @@
-﻿/*
+/*
     Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
 
     Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
@@ -13,7 +13,7 @@ void init( const string title ) {
     if ( titleLen > 0 && titleLen < _MAX_TITLE_COMMAND_LEN - _TITLE_COMMAND_LEN ) strcat_s( titleCommand, sizeof titleCommand, title );
     else strcat_s( titleCommand, sizeof titleCommand, __TIMESTAMP__ );
 
-    system( "chcp 1251 > nul" );
+    system( "chcp 65001 > nul" );
     system( "color f0" );
     system( titleCommand );
 }

@@ -1,4 +1,4 @@
-﻿/*
+/*
     Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
 
     Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
@@ -7,7 +7,7 @@
 #include "slp_io.h"
 
 bool getCorrectInt( int* dist ) {
-    string input = ( string ) malloc( _STD_READ_BUFFER * sizeof( char ) );
+    string input = (string)malloc( _STD_READ_BUFFER * sizeof( char ) );
     gets_s( input, _STD_READ_BUFFER );
 
     int startFrom = ( input[0] == '-' ) ? 1 : 0;
@@ -20,7 +20,7 @@ bool getCorrectInt( int* dist ) {
 }
 
 bool getCorrectFloat( float* dist ) {
-    string input = ( string ) malloc( _STD_READ_BUFFER * sizeof( char ) );
+    string input = (string)malloc( _STD_READ_BUFFER * sizeof( char ) );
     gets_s( input, _STD_READ_BUFFER );
 
     int dots = 0, startFrom = 0;
@@ -32,7 +32,7 @@ bool getCorrectFloat( float* dist ) {
         if ( input[i] == '.' ) dots++;
         if ( ( input[i] < '0' || input[i] > '9' ) && input[i] != '.' || dots > 1 ) return false;
     }
-    *dist = ( float ) atof( input );
+    *dist = (float)atof( input );
 
     return true;
 }
