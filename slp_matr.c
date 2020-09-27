@@ -16,7 +16,7 @@ msize getMatrSize( const string symbol, bool clsMode ) {
         printf( "¬ведите количество строк матрицы %s (%d - %d)\n>> ", symbol, MIN_MATR_SIZE, MAX_MATR_SIZE );
         isCorrectInput = getCorrectInt( &size.rows );
 
-        if ( clsMode ) cls;
+        clsMode&& cls;
         if ( size.rows >= MIN_MATR_SIZE && size.rows <= MAX_MATR_SIZE && isCorrectInput ) break;
 
         #ifdef _SLP_IO
@@ -32,7 +32,7 @@ msize getMatrSize( const string symbol, bool clsMode ) {
         printf( "¬ведите количество столбцов матрицы %c (%d - %d)\n>> ", symbol, MIN_MATR_SIZE, MAX_MATR_SIZE );
         isCorrectInput = getCorrectInt( &size.cols );
 
-        if ( clsMode ) cls;
+        clsMode&& cls;
         if ( size.cols >= MIN_MATR_SIZE && size.cols <= MAX_MATR_SIZE && isCorrectInput ) break;
         
         #ifdef _SLP_IO
