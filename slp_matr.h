@@ -1,54 +1,54 @@
-/*
-    Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
+п»ї/*
+    РђРІС‚РѕСЂ Р±РёР±Р»РёРѕС‚РµРєРё slpAkkie (GitHub Alexandr Shamanin)
 
-    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
+    РЎРјРѕС‚СЂРёС‚Рµ РїРѕСЃР»РµРґРЅСЋСЋ РІРµСЂСЃРёСЋ РЅР° GitHub - https://github.com/slpAkkie/slpCLib
 */
 
 #pragma once
 #include "slp_io.h"
 #include <stdio.h>
 
-// Минимальный размер матрицы по одной из координат
+// РњРёРЅРёРјР°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ РјР°С‚СЂРёС†С‹ РїРѕ РѕРґРЅРѕР№ РёР· РєРѕРѕСЂРґРёРЅР°С‚
 #define MIN_MATR_SIZE 1
-// Максимальный размер матрицы по одной из координат
+// РњР°РєСЃРёРјР°Р»СЊРЅС‹Р№ СЂР°Р·РјРµСЂ РјР°С‚СЂРёС†С‹ РїРѕ РѕРґРЅРѕР№ РёР· РєРѕРѕСЂРґРёРЅР°С‚
 #define MAX_MATR_SIZE 5
 
-// Целочисленная матрицы
+// Р¦РµР»РѕС‡РёСЃР»РµРЅРЅР°СЏ РјР°С‚СЂРёС†С‹
 typedef int** imatr;
-// Элемент целочисленной матрицы
+// Р­Р»РµРјРµРЅС‚ С†РµР»РѕС‡РёСЃР»РµРЅРЅРѕР№ РјР°С‚СЂРёС†С‹
 typedef int imatr_el;
 
-// Вещественная матрицы
+// Р’РµС‰РµСЃС‚РІРµРЅРЅР°СЏ РјР°С‚СЂРёС†С‹
 typedef float** fmatr;
-// Элемент вещественной матрицы
+// Р­Р»РµРјРµРЅС‚ РІРµС‰РµСЃС‚РІРµРЅРЅРѕР№ РјР°С‚СЂРёС†С‹
 typedef float fmatr_el;
 
 #ifndef _VSIZE_T
     #define _VSIZE_T
-    // Размер массива
+    // Р Р°Р·РјРµСЂ РјР°СЃСЃРёРІР°
     typedef unsigned int vsize;
 #endif // !_VSIZE_T
 
-// Размер матрицы
+// Р Р°Р·РјРµСЂ РјР°С‚СЂРёС†С‹
 typedef struct matr_size {
     vsize rows, cols;
 } msize;
 
-// Устанавливает размер матрицы
+// РЈСЃС‚Р°РЅР°РІР»РёРІР°РµС‚ СЂР°Р·РјРµСЂ РјР°С‚СЂРёС†С‹
 #define setMatrLenght(matr, mType, eType, size) \
     matr = ( mType )malloc( size.rows * sizeof( eType ) ); \
     for (int i = 0; i < size.rows; i++) matr[i] = (eType*)malloc( size.cols * sizeof( eType ) )
 
 /*
-    Получает от пользователя размер матрицы
-    Возвращает размер матрицы структурой msize
+    РџРѕР»СѓС‡Р°РµС‚ РѕС‚ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ СЂР°Р·РјРµСЂ РјР°С‚СЂРёС†С‹
+    Р’РѕР·РІСЂР°С‰Р°РµС‚ СЂР°Р·РјРµСЂ РјР°С‚СЂРёС†С‹ СЃС‚СЂСѓРєС‚СѓСЂРѕР№ msize
 */
 msize getMatrSize( const char symbol, bool clsMode );
-// Заполняет целочисленную матрицу
+// Р—Р°РїРѕР»РЅСЏРµС‚ С†РµР»РѕС‡РёСЃР»РµРЅРЅСѓСЋ РјР°С‚СЂРёС†Сѓ
 void fillIntMatr( msize size, imatr matr, char symbol );
-// Выводит целочисленную матрицу
+// Р’С‹РІРѕРґРёС‚ С†РµР»РѕС‡РёСЃР»РµРЅРЅСѓСЋ РјР°С‚СЂРёС†Сѓ
 void printIntMatr( msize size, imatr matr, char symbol, string status );
-// Заполняет вещественную матрицу
+// Р—Р°РїРѕР»РЅСЏРµС‚ РІРµС‰РµСЃС‚РІРµРЅРЅСѓСЋ РјР°С‚СЂРёС†Сѓ
 void fillFloatMatr( msize size, fmatr matr, char symbol );
-// Выводит вещественную матрицу
+// Р’С‹РІРѕРґРёС‚ РІРµС‰РµСЃС‚РІРµРЅРЅСѓСЋ РјР°С‚СЂРёС†Сѓ
 void printFloatMatr( msize size, fmatr matr, char symbol, string status );

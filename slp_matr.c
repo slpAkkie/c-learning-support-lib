@@ -1,7 +1,7 @@
-/*
-    Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
+п»ї/*
+    РђРІС‚РѕСЂ Р±РёР±Р»РёРѕС‚РµРєРё slpAkkie (GitHub Alexandr Shamanin)
 
-    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
+    РЎРјРѕС‚СЂРёС‚Рµ РїРѕСЃР»РµРґРЅСЋСЋ РІРµСЂСЃРёСЋ РЅР° GitHub - https://github.com/slpAkkie/slpCLib
 */
 
 #include "slp_matr.h"
@@ -13,32 +13,32 @@ msize getMatrSize( const string symbol, bool clsMode ) {
     bool isCorrectInput;
 
     while ( true ) {
-        printf( "Введите количество строк матрицы %s (%d - %d)\n>> ", symbol, MIN_MATR_SIZE, MAX_MATR_SIZE );
+        printf( "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє РјР°С‚СЂРёС†С‹ %s (%d - %d)\n>> ", symbol, MIN_MATR_SIZE, MAX_MATR_SIZE );
         isCorrectInput = getCorrectInt( &size.rows );
 
         clsMode&& cls;
         if ( size.rows >= MIN_MATR_SIZE && size.rows <= MAX_MATR_SIZE && isCorrectInput ) break;
 
         #ifdef _SLP_IO
-        redPrint( "Вы ввели недопусимое количество строк\nДиапазон от %d до %d\nПовторите ввод\n", MIN_MATR_SIZE, MAX_MATR_SIZE );
+        redPrint( "Р’С‹ РІРІРµР»Рё РЅРµРґРѕРїСѓСЃРёРјРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє\nР”РёР°РїР°Р·РѕРЅ РѕС‚ %d РґРѕ %d\nРџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ\n", MIN_MATR_SIZE, MAX_MATR_SIZE );
         #else
-        printf( "Вы ввели недопусимое количество строк\nДиапазон от %d до %d\nПовторите ввод\n", MIN_MATR_SIZE, MAX_MATR_SIZE );
+        printf( "Р’С‹ РІРІРµР»Рё РЅРµРґРѕРїСѓСЃРёРјРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚СЂРѕРє\nР”РёР°РїР°Р·РѕРЅ РѕС‚ %d РґРѕ %d\nРџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ\n", MIN_MATR_SIZE, MAX_MATR_SIZE );
         #endif // _SLP_IO
 
         printf( ">> " );
     }
 
     while ( true ) {
-        printf( "Введите количество столбцов матрицы %c (%d - %d)\n>> ", symbol, MIN_MATR_SIZE, MAX_MATR_SIZE );
+        printf( "Р’РІРµРґРёС‚Рµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ РјР°С‚СЂРёС†С‹ %c (%d - %d)\n>> ", symbol, MIN_MATR_SIZE, MAX_MATR_SIZE );
         isCorrectInput = getCorrectInt( &size.cols );
 
         clsMode&& cls;
         if ( size.cols >= MIN_MATR_SIZE && size.cols <= MAX_MATR_SIZE && isCorrectInput ) break;
         
         #ifdef _SLP_IO
-        redPrint( "Вы ввели недопусимое количество столбцов\nДиапазон от %d до %d\nПовторите ввод\n", MIN_MATR_SIZE, MAX_MATR_SIZE );
+        redPrint( "Р’С‹ РІРІРµР»Рё РЅРµРґРѕРїСѓСЃРёРјРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ\nР”РёР°РїР°Р·РѕРЅ РѕС‚ %d РґРѕ %d\nРџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ\n", MIN_MATR_SIZE, MAX_MATR_SIZE );
         #else
-        printf( "Вы ввели недопусимое количество столбцов\nДиапазон от %d до %d\nПовторите ввод\n", MIN_MATR_SIZE, MAX_MATR_SIZE );
+        printf( "Р’С‹ РІРІРµР»Рё РЅРµРґРѕРїСѓСЃРёРјРѕРµ РєРѕР»РёС‡РµСЃС‚РІРѕ СЃС‚РѕР»Р±С†РѕРІ\nР”РёР°РїР°Р·РѕРЅ РѕС‚ %d РґРѕ %d\nРџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ\n", MIN_MATR_SIZE, MAX_MATR_SIZE );
         #endif // _SLP_IO
 
         printf( ">> " );
@@ -54,9 +54,9 @@ void fillIntMatr( msize size, imatr matr, char symbol ) {
             if ( !getCorrectInt( &matr[i][j] ) ) {
                 
                 #ifdef _SLP_IO
-                redPrint( "\nВы ввели не целое число\nПовторите ввод\n" );
+                redPrint( "\nР’С‹ РІРІРµР»Рё РЅРµ С†РµР»РѕРµ С‡РёСЃР»Рѕ\nРџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ\n" );
                 #else
-                printf( "\nВы ввели не целое число\nПовторите ввод\n" );
+                printf( "\nР’С‹ РІРІРµР»Рё РЅРµ С†РµР»РѕРµ С‡РёСЃР»Рѕ\nРџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ\n" );
                 #endif // _SLP_IO
 
                 printf( ">> " );
@@ -67,7 +67,7 @@ void fillIntMatr( msize size, imatr matr, char symbol ) {
 }
 
 void printIntMatr( msize size, imatr matr, char symbol, string status ) {
-    greenPrint( "%s матрица %c:\n", status, symbol );
+    greenPrint( "%s РјР°С‚СЂРёС†Р° %c:\n", status, symbol );
 
     for ( vsize i = 0; i < size.rows; i++ ) {
         for ( vsize j = 0; j < size.cols; j++ )
@@ -84,9 +84,9 @@ void fillFloatMatr( msize size, fmatr matr, char symbol ) {
             if ( !getCorrectFloat( &matr[i][j] ) ) {
 
                 #ifdef _SLP_IO
-                redPrint( "\nВы ввели не число\nПовторите ввод\n" );
+                redPrint( "\nР’С‹ РІРІРµР»Рё РЅРµ С‡РёСЃР»Рѕ\nРџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ\n" );
                 #else
-                printf( "\nВы ввели не число\nПовторите ввод\n" );
+                printf( "\nР’С‹ РІРІРµР»Рё РЅРµ С‡РёСЃР»Рѕ\nРџРѕРІС‚РѕСЂРёС‚Рµ РІРІРѕРґ\n" );
                 #endif // _SLP_IO
 
                 printf( ">> " );
@@ -97,7 +97,7 @@ void fillFloatMatr( msize size, fmatr matr, char symbol ) {
 }
 
 void printFloatMatr( msize size, fmatr matr, char symbol, string status ) {
-    greenPrint( "%s матрица %c:\n", status, symbol );
+    greenPrint( "%s РјР°С‚СЂРёС†Р° %c:\n", status, symbol );
 
     for ( vsize i = 0; i < size.rows; i++ ) {
         for ( vsize j = 0; j < size.cols; j++ )
