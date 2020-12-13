@@ -1,7 +1,7 @@
 /*
-    Àâòîð áèáëèîòåêè slpAkkie (GitHub Alexandr Shamanin)
+    Ñ˜Ð²Ñ‚Ð¾Ñ€ Ð±Ð¸Ð±Ð»Ð¸Ð¾Ñ‚ÐµÐºÐ¸ slpAkkie (GitHub Alexandr Shamanin)
 
-    Ñìîòðèòå ïîñëåäíþþ âåðñèþ íà GitHub - https://github.com/slpAkkie/slpCLib
+    â€”Ð¼Ð¾Ñ‚Ñ€Ð¸Ñ‚Ðµ Ð¿Ð¾ÑÐ»ÐµÐ´Ð½ÑŽÑŽ Ð²ÐµÑ€ÑÐ¸ÑŽ Ð½Ð° GitHub - https://github.com/slpAkkie/slpCLib
 */
 
 #include "slp_crumbs.h"
@@ -13,7 +13,7 @@ void init( const string title ) {
     if ( titleLen > 0 && titleLen < _MAX_TITLE_COMMAND_LEN - _TITLE_COMMAND_LEN ) strcat_s( titleCommand, sizeof titleCommand, title );
     else strcat_s( titleCommand, sizeof titleCommand, __TIMESTAMP__ );
 
-    system( "chcp 1251 > nul" );
+    system( "chcp 65001 > nul" );
     system( "color f0" );
     system( titleCommand );
 }
