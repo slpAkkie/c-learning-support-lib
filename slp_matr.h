@@ -1,7 +1,7 @@
 /*
-    Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
+    Автор библиотеки Alexandr Shamanin (@slpAkkie)
 
-    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
+    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/c-lib
 */
 
 #pragma once
@@ -14,12 +14,12 @@
 #define MAX_MATR_SIZE 5
 
 // Целочисленная матрицы
-typedef int** imatr;
+typedef int **imatr;
 // Элемент целочисленной матрицы
 typedef int imatr_el;
 
 // Вещественная матрицы
-typedef float** fmatr;
+typedef float **fmatr;
 // Элемент вещественной матрицы
 typedef float fmatr_el;
 
@@ -30,25 +30,27 @@ typedef unsigned int vsize;
 #endif // !_VSIZE_T
 
 // Размер матрицы
-typedef struct matr_size {
+typedef struct matr_size
+{
     vsize rows, cols;
 } msize;
 
 // Устанавливает размер матрицы
-#define setMatrLenght(matr, mType, eType, size) \
-    matr = ( mType )malloc( size.rows * sizeof( eType ) ); \
-    for (int i = 0; i < size.rows; i++) matr[i] = (eType*)malloc( size.cols * sizeof( eType ) )
+#define setMatrLenght(matr, mType, eType, size)      \
+    matr = (mType)malloc(size.rows * sizeof(eType)); \
+    for (int i = 0; i < size.rows; i++)              \
+    matr[i] = (eType *)malloc(size.cols * sizeof(eType))
 
 /*
     Получает от пользователя размер матрицы
     Возвращает размер матрицы структурой msize
 */
-msize getMatrSize( const string symbol, bool clsMode );
+msize getMatrSize(const string symbol, bool clsMode);
 // Заполняет целочисленную матрицу
-void fillIntMatr( msize size, imatr matr, string symbol );
+void fillIntMatr(msize size, imatr matr, string symbol);
 // Выводит целочисленную матрицу
-void printIntMatr( msize size, imatr matr, string symbol, string status );
+void printIntMatr(msize size, imatr matr, string symbol, string status);
 // Заполняет вещественную матрицу
-void fillFloatMatr( msize size, fmatr matr, string symbol );
+void fillFloatMatr(msize size, fmatr matr, string symbol);
 // Выводит вещественную матрицу
-void printFloatMatr( msize size, fmatr matr, string symbol, string status );
+void printFloatMatr(msize size, fmatr matr, string symbol, string status);

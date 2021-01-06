@@ -1,7 +1,7 @@
 /*
-    Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
+    Автор библиотеки Alexandr Shamanin (@slpAkkie)
 
-    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
+    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/c-lib
 */
 
 #pragma once
@@ -13,7 +13,7 @@
 #define _SLP_IO
 
 // Строка (Фактически указатель на массив символов)
-typedef char* string;
+typedef char *string;
 
 /*
 * Макросы для управления цветом отображения текста в консоли
@@ -31,19 +31,19 @@ typedef char* string;
 
 #ifdef __SLP_DEV_MODE__
 #define redInput(_format, _offer, _dist) \
-    startRedColor; \
-    printf( _offer ); \
-    scanf_s(_format, &_dist); \
+    startRedColor;                       \
+    printf(_offer);                      \
+    scanf_s(_format, &_dist);            \
     endColor
 #define blueInput(_format, _offer, _dist) \
-    startBlueColor; \
-    printf( _offer ); \
-    scanf_s(_format, &_dist); \
+    startBlueColor;                       \
+    printf(_offer);                       \
+    scanf_s(_format, &_dist);             \
     endColor
 #define greenInput(_format, _offer, _dist) \
-    startGreenColor; \
-    printf( _offer ); \
-    scanf_s(_format, &_dist); \
+    startGreenColor;                       \
+    printf(_offer);                        \
+    scanf_s(_format, &_dist);              \
     endColor
 #endif // !SLP_FULL_MODE
 
@@ -58,19 +58,19 @@ typedef char* string;
 #define _STD_READ_BUFFER 255
 
 // Как printf только красным цветом (Только с использованным init())
-void redPrint( const string format, ... );
+void redPrint(const string format, ...);
 // Как printf только синим цветом (Только с использованным init())
-void bluePrint( const string format, ... );
+void bluePrint(const string format, ...);
 // Как printf только зеленым цветом (Только с использованным init())
-void greenPrint( const string format, ... );
+void greenPrint(const string format, ...);
 
 /*
     Безопасный ввод целого числа
     Возвращает true, если запись удалась и false в противном случае
 */
-bool getCorrectInt( int* dist );
+bool getCorrectInt(int *dist);
 /*
     Безопасный ввод вещественного числа
     Возвращает true, если запись удалась и false в противном случае
 */
-bool getCorrectFloat( float* dist );
+bool getCorrectFloat(float *dist);

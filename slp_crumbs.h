@@ -1,7 +1,7 @@
 /*
-    Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
+    Автор библиотеки Alexandr Shamanin (@slpAkkie)
 
-    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
+    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/c-lib
 */
 
 #pragma once
@@ -17,9 +17,9 @@
 #define _MAX_TITLE_COMMAND_LEN 64
 
 // Инициализировать настройки консоли (Необходимо для использование цветного вывода)
-void init( const string title );
+void init(const string title);
 /*
     Задать пользователю вопрос с вариантами Да (Y) и Нет (N)
     Вернет true если пользователь ответил да и false в остальных случаях
 */
-bool askUserYN( const string question );
+bool askUserYN(const string question);

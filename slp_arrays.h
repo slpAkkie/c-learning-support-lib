@@ -1,7 +1,7 @@
 /*
-    Автор библиотеки slpAkkie (GitHub Alexandr Shamanin)
+    Автор библиотеки Alexandr Shamanin (@slpAkkie)
 
-    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/slpCLib
+    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/c-lib
 */
 
 #pragma once
@@ -14,10 +14,10 @@
 #define _MAX_ARR_LEN 50
 
 // Целочисленный массив
-typedef int* iarr;
+typedef int *iarr;
 
 // Вещественный массив
-typedef float* farr;
+typedef float *farr;
 
 #ifndef _VSIZE_T
 #define _VSIZE_T
@@ -26,18 +26,18 @@ typedef unsigned int vsize;
 #endif // !_VSIZE_T
 
 // Устанавливает размер массива
-#define setArrLenght(arr, type, lenght) arr = ( type )malloc( lenght * sizeof( type ) )
+#define setArrLenght(arr, type, lenght) arr = (type)malloc(lenght * sizeof(type))
 
 /*
     Получает от пользователя размер массива
     Возвращает размер массива типа vsize (Фактический тип: int)
 */
-vsize getArrLen( const string symbol, bool clsMode );
+vsize getArrLen(const string symbol, bool clsMode);
 // Заполняет целочисленный массив
-void fillIntArray( iarr arr, const string symbol, vsize len );
+void fillIntArray(iarr arr, const string symbol, vsize len);
 // Выводит целочисленный массив
-void printIntArray( iarr arr, const string symbol, vsize len, string status );
+void printIntArray(iarr arr, const string symbol, vsize len, string status);
 // Заполняет вещественный массив
-void fillFloatArray( farr arr, const string symbol, vsize len );
+void fillFloatArray(farr arr, const string symbol, vsize len);
 // Выводит вещественный массив
-void printFloatArray( farr arr, const string symbol, vsize len, string status );
+void printFloatArray(farr arr, const string symbol, vsize len, string status);
