@@ -1,7 +1,7 @@
 /*
     Автор библиотеки Alexandr Shamanin (@slpAkkie)
 
-    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/c-lib
+    Смотрите последнюю версию на GitHub - https://github.com/slpAkkie/c-learning-support-lib
 */
 
 #include "slp_arrays.h"
