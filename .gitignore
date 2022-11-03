@@ -363,7 +363,5 @@ MigrationBackup/
 FodyWeavers.xsd
 
 ### Current project ###
-demo/*.*
-demo/Debug/*.*
-!demo/Debug/slpSample.exe
+demo/
 !demo/main.c
